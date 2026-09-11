@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+backend/venv/
+*/venv/
+.venv/
+
+# Environment Variables & Secrets (NEVER COMMIT SENSITIVE KEYS)
+.env
+.env.local
+.env.*.local
+*.env
+!*.env.example
+
+# Next.js Build Outputs
+frontend/.next/
+frontend/out/
+
+# Python Cache & Databases
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
+*.sqlite3
+backend/lucid.db
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
