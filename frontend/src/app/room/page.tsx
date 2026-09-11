@@ -117,7 +117,7 @@ export default function RoomPage() {
       </section>
 
       {/* RADIAL ATMOSPHERE INSTRUMENT (Design Spec 21 & 22) */}
-      <div className="relative w-full rounded-3xl bg-lucid-ash border border-lucid-border p-6 md:p-12 shadow-2xl overflow-hidden mb-12">
+      <div className="relative w-full rounded-3xl bg-lucid-ash border border-lucid-border p-4 sm:p-6 md:p-12 shadow-2xl overflow-hidden mb-12">
         {/* Ambient Mood Light */}
         <div
           className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none ${
@@ -129,16 +129,16 @@ export default function RoomPage() {
           }`}
         />
 
-        <div className="relative z-10 flex flex-col items-center justify-center py-6">
+        <div className="relative z-10 flex flex-col items-center justify-center py-4 sm:py-6">
           {/* Radial Instrument Center */}
-          <div className="text-center mb-10">
+          <div className="text-center mb-8 sm:mb-10">
             <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone block mb-1">
               COMPOSITE READING
             </span>
-            <div className="font-editorial text-8xl md:text-9xl text-lucid-bone font-normal tracking-tight">
+            <div className="font-editorial text-6xl sm:text-8xl md:text-9xl text-lucid-bone font-normal tracking-tight">
               {selectedSignal ? selectedSignal.current_value : (snapshot?.composite_score || 63)}
             </div>
-            <div className="font-mono text-xl uppercase tracking-widest text-lucid-oxide font-medium mt-1">
+            <div className="font-mono text-lg sm:text-xl uppercase tracking-widest text-lucid-oxide font-medium mt-1">
               {selectedSignal ? selectedSignal.name : (snapshot?.atmosphere || "UNCERTAIN")}
             </div>
             <div className="w-24 h-px bg-lucid-border/80 mx-auto my-3" />
@@ -148,26 +148,26 @@ export default function RoomPage() {
           </div>
 
           {/* Radial 5 Nodes Orbit */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 w-full max-w-4xl">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 w-full max-w-4xl">
             {signals.map((sig, idx) => {
               const isSelected = selectedSignalIndex === idx;
               return (
                 <button
                   key={sig.name}
                   onClick={() => setSelectedSignalIndex(isSelected ? null : idx)}
-                  className={`p-4 rounded-xl border text-left transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl border text-left transition-all ${
                     isSelected
                       ? "bg-lucid-ink border-lucid-oxide shadow-lg scale-105"
                       : "bg-lucid-ink/50 border-lucid-border/60 hover:border-lucid-stone hover:bg-lucid-ink/80"
                   }`}
                 >
                   <div className="flex items-center justify-between text-[11px] font-mono text-lucid-stone mb-1">
-                    <span>{sig.name}</span>
+                    <span className="truncate mr-1">{sig.name}</span>
                     <span className={sig.direction === "UP" ? "text-lucid-ember font-bold" : (sig.direction === "DOWN" ? "text-lucid-moss font-bold" : "text-lucid-stone")}>
                       {sig.direction === "UP" ? "↑" : (sig.direction === "DOWN" ? "↓" : "→")}
                     </span>
                   </div>
-                  <div className="font-editorial text-2xl text-lucid-bone font-normal">
+                  <div className="font-editorial text-xl sm:text-2xl text-lucid-bone font-normal">
                     {sig.current_value}
                   </div>
                   <div className="text-[10px] text-lucid-stone/70 font-mono mt-1">
@@ -182,10 +182,10 @@ export default function RoomPage() {
           <div className="w-full max-w-3xl mt-8 pt-6 border-t border-lucid-border/50 text-center">
             {selectedSignal ? (
               <div className="space-y-2 animate-in fade-in duration-200">
-                <p className="text-base text-lucid-bone font-light">
+                <p className="text-sm sm:text-base text-lucid-bone font-light">
                   {selectedSignal.contribution}
                 </p>
-                <div className="flex items-center justify-center gap-6 text-xs font-mono text-lucid-stone">
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-mono text-lucid-stone">
                   <span>Source: {selectedSignal.source}</span>
                   <span>·</span>
                   <span>Coverage: {selectedSignal.coverage}</span>

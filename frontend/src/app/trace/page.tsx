@@ -104,8 +104,8 @@ export default function TracePage() {
       </div>
 
       {/* DECISION OVERLAY TIMELINE */}
-      <div className="p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl mb-12">
-        <div className="flex items-center justify-between pb-6 border-b border-lucid-border/50">
+      <div className="p-4 sm:p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-lucid-border/50 gap-2">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone">
               DECISION TIMING VS. MARKET ATMOSPHERE
@@ -192,7 +192,7 @@ export default function TracePage() {
       </section>
 
       {/* LEARNING MAP CONSTELLATION (ALL 7 STUDIOS) */}
-      <section className="mt-12 p-8 rounded-3xl bg-lucid-ash border border-lucid-border">
+      <section className="mt-12 p-4 sm:p-6 md:p-8 rounded-3xl bg-lucid-ash border border-lucid-border">
         <span className="text-xs font-mono uppercase tracking-widest text-lucid-stone block mb-2">
           THE LEARNING MAP (NOT A LEADERBOARD)
         </span>

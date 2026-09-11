@@ -21,8 +21,8 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
 }) => {
   return (
     <>
-      {/* Top Subtle Breadcrumb */}
-      <header className="fixed top-6 left-24 z-30 flex items-center gap-2 text-xs tracking-widest uppercase font-mono text-lucid-stone/80 select-none">
+      {/* Top Breadcrumb Navigation */}
+      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs tracking-widest uppercase font-mono text-lucid-stone/80 select-none flex-wrap mb-4">
         <Link href="/" className="hover:text-lucid-bone transition-colors">
           LUCID
         </Link>
@@ -40,11 +40,11 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
             <span className="text-lucid-bone font-medium">{observation}</span>
           </>
         )}
-      </header>
+      </nav>
 
-      {/* Bottom Orientation Bar */}
+      {/* Bottom Orientation Bar (Desktop Only) */}
       {stepIndex && (
-        <footer className="fixed bottom-6 left-24 right-8 z-30 flex items-center justify-between text-xs text-lucid-stone pointer-events-none select-none">
+        <aside aria-label="Step orientation" className="hidden md:flex fixed bottom-6 left-24 right-8 z-30 items-center justify-between text-xs text-lucid-stone pointer-events-none select-none">
           <div className="flex items-center gap-3 bg-lucid-ash/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-lucid-border/40 pointer-events-auto">
             <span className="font-mono text-lucid-oxide text-[11px] font-semibold">{stepIndex}</span>
             <span className="text-lucid-stone/50">|</span>
@@ -54,7 +54,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
           <div className="text-[11px] text-lucid-stone/60 font-mono">
             PRESS <kbd className="px-1.5 py-0.5 rounded bg-lucid-ash border border-lucid-border/50 text-[10px]">⌘K</kbd> FOR COMMANDS
           </div>
-        </footer>
+        </aside>
       )}
     </>
   );

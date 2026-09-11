@@ -65,7 +65,7 @@ export const WalkaroundGuide: React.FC = () => {
   // 1. Initial Launch Invitation Modal
   if (showInitialPrompt && !isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50 max-w-md w-full p-5 rounded-2xl bg-[#0B0F19]/95 backdrop-blur-xl border-2 border-[#00F5A0]/50 shadow-[0_15px_45px_rgba(0,0,0,0.8)] space-y-4 animate-in fade-in slide-in-from-bottom-5 duration-300">
+      <div className="fixed left-3 right-3 bottom-16 sm:left-auto sm:right-6 sm:bottom-6 z-50 max-w-md p-4 sm:p-5 rounded-2xl bg-[#0B0F19]/95 backdrop-blur-xl border-2 border-[#00F5A0]/50 shadow-[0_15px_45px_rgba(0,0,0,0.8)] space-y-4 animate-in fade-in slide-in-from-bottom-5 duration-300">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#00F5A0] animate-ping" />
@@ -116,8 +116,8 @@ export const WalkaroundGuide: React.FC = () => {
   const isLast = currentStep === tourChapters.length - 1;
 
   return (
-    <div className="fixed inset-x-4 bottom-6 md:inset-x-auto md:right-8 md:bottom-8 z-50 md:max-w-2xl w-full">
-      <div className="rounded-2xl bg-[#080D16]/95 backdrop-blur-2xl border-2 border-[#00F5A0]/60 shadow-[0_20px_60px_rgba(0,0,0,0.9)] p-6 space-y-5">
+    <div className="fixed left-3 right-3 bottom-16 sm:bottom-6 md:left-auto md:right-8 md:bottom-8 z-50 md:max-w-2xl max-h-[85vh] overflow-y-auto">
+      <div className="rounded-2xl bg-[#080D16]/95 backdrop-blur-2xl border-2 border-[#00F5A0]/60 shadow-[0_20px_60px_rgba(0,0,0,0.9)] p-4 sm:p-6 space-y-4 sm:space-y-5">
         {/* Top Control Bar */}
         <div className="flex items-center justify-between gap-3 border-b border-[#18263D] pb-3">
           <div className="flex items-center gap-2">
@@ -203,7 +203,7 @@ export const WalkaroundGuide: React.FC = () => {
         </div>
 
         {/* Chapter Quick Jump Tabs */}
-        <div className="grid grid-cols-6 gap-1.5 pt-1 border-t border-[#16243A]">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5 pt-1 border-t border-[#16243A]">
           {tourChapters.map((ch, idx) => (
             <button
               key={ch.id}

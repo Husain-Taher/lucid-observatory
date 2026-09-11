@@ -126,22 +126,22 @@ export default function MarketFloorPage() {
   return (
     <div className="min-h-screen bg-[#050608] text-gray-100 flex flex-col font-sans selection:bg-[#00F5A0]/30 selection:text-white">
       {/* Top Header Bar */}
-      <header className="w-full bg-[#090c10] border-b border-[#1c222d] sticky top-0 z-40 px-4 lg:px-8 py-3.5">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
+      <header className="w-full bg-[#090c10] border-b border-[#1c222d] sticky top-0 z-40 px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3.5">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-4">
             <Link
               href="/room"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-mono border border-white/10 hover:border-[#00F5A0] hover:text-[#00F5A0] bg-[#12161f] transition-colors"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded text-xs font-mono border border-white/10 hover:border-[#00F5A0] hover:text-[#00F5A0] bg-[#12161f] transition-colors whitespace-nowrap"
             >
-              <span>← RETURN TO CALM OBSERVATORY</span>
+              <span>← <span className="hidden sm:inline">RETURN TO </span>OBSERVATORY</span>
             </Link>
 
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-ping" />
-              <h1 className="font-mono text-xs lg:text-sm tracking-widest uppercase font-bold text-white">
+              <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-ping shrink-0" />
+              <h1 className="font-mono text-[11px] sm:text-xs lg:text-sm tracking-widest uppercase font-bold text-white">
                 THE LIVING MARKET FLOOR
               </h1>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#00F5A0]/10 border border-[#00F5A0]/30 text-[#00F5A0] font-bold">
+              <span className="hidden sm:inline text-[10px] font-mono px-2 py-0.5 rounded bg-[#00F5A0]/10 border border-[#00F5A0]/30 text-[#00F5A0] font-bold">
                 HIGH VELOCITY
               </span>
             </div>
@@ -165,9 +165,9 @@ export default function MarketFloorPage() {
       />
 
       {/* Main Floor Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-12">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-4 lg:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12">
         {/* Symbol Search Bar & Focus Chips */}
-        <section className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-[#090d14] border border-[#1a2230]">
+        <section className="flex flex-col md:flex-row items-center justify-between gap-4 p-3 sm:p-4 rounded-xl bg-[#090d14] border border-[#1a2230]">
           <form onSubmit={handleTickerSearch} className="flex items-center gap-2 w-full md:w-auto">
             <div className="relative w-full md:w-72">
               <input

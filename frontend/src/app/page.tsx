@@ -54,10 +54,10 @@ export default function HomePage() {
           You can understand it first.
         </p>
 
-        <div className="pt-4 flex flex-wrap items-center gap-4">
+        <div className="pt-4 flex flex-wrap items-center gap-2.5 sm:gap-4">
           <Link
             href="/room"
-            className="px-6 py-3 rounded-full bg-lucid-oxide text-lucid-ink hover:bg-[#D47952] transition-colors font-mono text-xs uppercase tracking-widest font-semibold flex items-center gap-2"
+            className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-lucid-oxide text-lucid-ink hover:bg-[#D47952] transition-colors font-mono text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2"
           >
             <span>See Why</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -65,7 +65,7 @@ export default function HomePage() {
 
           <button
             onClick={() => setTakeoffOpen(true)}
-            className="px-6 py-3 rounded-full bg-[#00F5A0] text-black hover:bg-[#3bfdb9] transition-all font-mono text-xs uppercase tracking-widest font-black flex items-center gap-2 shadow-[0_0_18px_rgba(0,245,160,0.35)] hover:scale-105"
+            className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-[#00F5A0] text-black hover:bg-[#3bfdb9] transition-all font-mono text-xs uppercase tracking-widest font-black flex items-center justify-center gap-2 shadow-[0_0_18px_rgba(0,245,160,0.35)] hover:scale-105"
           >
             <Zap className="w-3.5 h-3.5 fill-black" />
             <span>LET&apos;S GO TO THE MARKET</span>
@@ -73,14 +73,14 @@ export default function HomePage() {
 
           <Link
             href="/see"
-            className="px-6 py-3 rounded-full border border-lucid-border bg-lucid-ash text-lucid-bone hover:border-lucid-stone transition-colors font-mono text-xs uppercase tracking-widest"
+            className="flex-1 sm:flex-initial text-center px-5 py-3 rounded-full border border-lucid-border bg-lucid-ash text-lucid-bone hover:border-lucid-stone transition-colors font-mono text-xs uppercase tracking-widest"
           >
             Explore Concepts
           </Link>
 
           <button
             onClick={() => startTour(0)}
-            className="px-6 py-3 rounded-full border border-[#00F5A0]/40 bg-[#0B1522] text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition-all font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(0,245,160,0.15)]"
+            className="flex-1 sm:flex-initial text-center px-5 py-3 rounded-full border border-[#00F5A0]/40 bg-[#0B1522] text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition-all font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,245,160,0.15)]"
           >
             <Compass className="w-3.5 h-3.5" />
             <span>Guided Walkaround</span>
@@ -89,7 +89,7 @@ export default function HomePage() {
       </section>
 
       {/* THE PROMINENT MARKET FLOOR FLIGHT LAUNCHPAD */}
-      <div className="mb-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#0c121d] via-[#080d16] to-[#05080f] border-2 border-[#00F5A0]/40 shadow-[0_10px_35px_rgba(0,245,160,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
+      <div className="mb-12 p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#0c121d] via-[#080d16] to-[#05080f] border-2 border-[#00F5A0]/40 shadow-[0_10px_35px_rgba(0,245,160,0.12)] flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
         <div className="relative z-10 space-y-1.5">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-ping" />
@@ -117,7 +117,7 @@ export default function HomePage() {
       </div>
 
       {/* PHASE 7: THE INVESTMENT INTEGRITY ENGINE CARD */}
-      <div className="mb-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#070D18] via-[#091222] to-[#060A14] border border-[#1E304B] shadow-[0_10px_35px_rgba(30,48,75,0.3)] flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
+      <div className="mb-12 p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#070D18] via-[#091222] to-[#060A14] border border-[#1E304B] shadow-[0_10px_35px_rgba(30,48,75,0.3)] flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
         <div className="relative z-10 space-y-1.5">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#00F5A0]" />

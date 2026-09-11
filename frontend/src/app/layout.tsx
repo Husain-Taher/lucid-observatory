@@ -43,8 +43,8 @@ export default function RootLayout({
               onClose={() => setIsCommandPaletteOpen(false)}
             />
             <WalkaroundGuide />
-            <main className="min-h-screen pl-16 md:pl-20 pr-4 md:pr-10 py-12 transition-all flex flex-col justify-between">
-              <div>{children}</div>
+            <main className="min-h-screen px-3 sm:px-6 md:pl-24 md:pr-10 pt-16 pb-28 md:py-12 transition-all flex flex-col justify-between">
+              <div className="w-full max-w-7xl mx-auto">{children}</div>
 
             {/* MANDATORY FRED® API NOTICE & COMPLIANCE FOOTER */}
             <footer className="mt-24 pt-8 border-t border-lucid-border/40 text-center space-y-2.5">

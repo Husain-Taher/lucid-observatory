@@ -90,7 +90,7 @@ export default function PracticePage() {
       </section>
 
       {/* CLAIM INPUT SURFACE */}
-      <div className="p-6 md:p-8 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl mb-12">
+      <div className="p-4 sm:p-6 md:p-8 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl mb-12">
         <textarea
           rows={3}
           value={claimInput}
@@ -277,7 +277,7 @@ export default function PracticePage() {
           </div>
 
           {/* DECISION LOOP: EQUAL WEIGHTING (BUY / WAIT / PASS) */}
-          <div className="p-8 rounded-3xl bg-lucid-ash border border-lucid-border space-y-6">
+          <div className="p-4 sm:p-6 md:p-8 rounded-3xl bg-lucid-ash border border-lucid-border space-y-6">
             <span className="text-xs font-mono uppercase tracking-widest text-lucid-stone block">
               04 · THE DECISION LOOP (EQUAL WEIGHTING)
             </span>
@@ -442,7 +442,7 @@ export default function PracticePage() {
                     })()}
                   </svg>
 
-                  <div className="flex justify-between items-center text-[10px] font-mono text-lucid-stone pt-2">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1.5 text-[10px] font-mono text-lucid-stone pt-2">
                     <span className="text-lucid-moss font-bold">● Your Path ({activePoint.user_return_pct >= 0 ? `+${activePoint.user_return_pct}%` : `${activePoint.user_return_pct}%`})</span>
                     <span className="text-lucid-ember">--- Peak FOMO Chaser ({activePoint.fomo_chaser_pct}%)</span>
                     <span>— Market Benchmark (+{activePoint.benchmark_pct}%)</span>

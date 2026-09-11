@@ -20,10 +20,10 @@ export const RealBroadsheetPaper: React.FC<RealBroadsheetPaperProps> = ({
   });
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative overflow-x-hidden md:overflow-x-visible">
       {/* 3D Broadsheet Grid */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 py-4"
         style={{ perspective: "1500px" }}
       >
         {filteredArticles.map((article, idx) => {
@@ -43,7 +43,7 @@ export const RealBroadsheetPaper: React.FC<RealBroadsheetPaperProps> = ({
                 transform: `rotateY(${article.float_rotation}deg) rotateZ(${article.float_rotation * 0.4}deg)`,
                 animationDelay: `${article.levitation_delay}s`,
               }}
-              className={`group relative cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:z-30 hover:rotate-0 animate-levitate rounded-none p-6 flex flex-col justify-between select-none ${
+              className={`group relative cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:z-30 hover:rotate-0 animate-levitate rounded-none p-4 sm:p-6 flex flex-col justify-between select-none ${
                 isStructural
                   ? "bg-[#161512] text-[#e8e2d4] border-2 border-[#D4AF37]/80 shadow-[0_12px_36px_rgba(212,175,55,0.2)] hover:shadow-[0_18px_48px_rgba(212,175,55,0.35)]"
                   : isHype
@@ -184,7 +184,7 @@ export const RealBroadsheetPaper: React.FC<RealBroadsheetPaperProps> = ({
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-2xl bg-[#141311] border-2 border-[#D4AF37]/80 rounded-none p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95)] text-[#e8e2d4] relative font-serif"
+            className="w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#141311] border-2 border-[#D4AF37]/80 rounded-none p-4 sm:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95)] text-[#e8e2d4] relative font-serif"
           >
             {/* Close Button */}
             <button
@@ -211,7 +211,7 @@ export const RealBroadsheetPaper: React.FC<RealBroadsheetPaperProps> = ({
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl font-bold mb-4 leading-tight text-white">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 leading-tight text-white pr-20 sm:pr-0">
               {activeArticle.title}
             </h2>
 
@@ -242,7 +242,7 @@ export const RealBroadsheetPaper: React.FC<RealBroadsheetPaperProps> = ({
             </div>
 
             {/* Scoring & Outbound Link */}
-            <div className="flex items-center justify-between border-t border-[#363026] pt-4 font-mono text-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-[#363026] pt-4 font-mono text-xs">
               <div className="flex items-center gap-4">
                 <span className="text-[#8a8070]">
                   Substance: <strong className="text-[#00F5A0]">{activeArticle.substance_score}/100</strong>
@@ -256,7 +256,7 @@ export const RealBroadsheetPaper: React.FC<RealBroadsheetPaperProps> = ({
                 href={activeArticle.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-[#D4AF37] text-black font-bold uppercase tracking-wider hover:bg-[#ffe285] transition-colors"
+                className="w-full sm:w-auto text-center px-4 py-2 bg-[#D4AF37] text-black font-bold uppercase tracking-wider hover:bg-[#ffe285] transition-colors"
               >
                 Access Source Dispatch
               </a>

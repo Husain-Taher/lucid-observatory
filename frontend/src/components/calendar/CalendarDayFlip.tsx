@@ -66,9 +66,9 @@ export function CalendarDayFlip({ onDateChange }: CalendarDayFlipProps) {
   };
 
   return (
-    <div className="relative p-6 md:p-8 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl overflow-hidden">
+    <div className="relative p-4 sm:p-6 md:p-8 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl overflow-hidden">
       {/* Top Banner */}
-      <div className="flex items-center justify-between pb-4 border-b border-lucid-border/50 text-xs font-mono text-lucid-stone">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-lucid-border/50 gap-2 text-xs font-mono text-lucid-stone">
         <div className="flex items-center gap-2">
           <CalendarIcon className="w-3.5 h-3.5 text-lucid-oxide" />
           <span className="tracking-widest uppercase">Archival Desk Calendar · Time Horizon</span>
@@ -131,7 +131,7 @@ export function CalendarDayFlip({ onDateChange }: CalendarDayFlipProps) {
         </div>
 
         {/* Right: Controls & Stepper */}
-        <div className="flex flex-col gap-2 min-w-[140px]">
+        <div className="flex flex-col gap-2 w-full md:w-auto md:min-w-[140px]">
           <span className="font-mono text-[10px] text-lucid-stone uppercase tracking-widest text-center">
             STEP DAY
           </span>

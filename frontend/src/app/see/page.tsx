@@ -161,18 +161,18 @@ function SeeContent() {
             </div>
           )}
 
-          <div className="p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
+          <div className="p-4 sm:p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-lucid-border/50">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone">
                   TIME HORIZON
                 </span>
-                <div className="font-editorial text-5xl text-lucid-bone mt-1">
+                <div className="font-editorial text-4xl sm:text-5xl text-lucid-bone mt-1">
                   {compYears} {compYears === 1 ? "Year" : "Years"}
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2 min-w-[280px]">
+              <div className="flex flex-col gap-2 w-full sm:w-auto sm:min-w-[280px]">
                 <div className="flex justify-between text-xs font-mono text-lucid-stone">
                   <span>DRAG TIME HORIZON</span>
                   <span className="text-lucid-oxide font-bold">{compYears} YRS</span>
@@ -223,16 +223,16 @@ function SeeContent() {
       {/* ========================================================= */}
       {activeConcept === "risk-return" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
+          <div className="p-4 sm:p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-lucid-border/50">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone">
                   EXPECTED RETURN TARGET
                 </span>
-                <div className="font-editorial text-5xl text-lucid-bone mt-1">{expectedReturn}%</div>
+                <div className="font-editorial text-4xl sm:text-5xl text-lucid-bone mt-1">{expectedReturn}%</div>
               </div>
 
-              <div className="flex flex-col gap-2 min-w-[280px]">
+              <div className="flex flex-col gap-2 w-full sm:w-auto sm:min-w-[280px]">
                 <div className="flex justify-between text-xs font-mono text-lucid-stone">
                   <span>DRAG EXPECTED RETURN</span>
                   <span className="text-lucid-oxide font-bold">↑ {expectedReturn}%</span>
@@ -249,12 +249,12 @@ function SeeContent() {
               </div>
             </div>
 
-            <div className="py-12 flex flex-col items-center justify-center text-center relative">
+            <div className="py-12 flex flex-col items-center justify-center text-center relative overflow-hidden">
               <span className="text-xs font-mono text-lucid-stone/80 uppercase tracking-widest mb-6">
                 ANNUAL OUTCOME DISPERSION (UNCERTAINTY ENVELOPE)
               </span>
 
-              <div className="relative w-full max-w-lg h-56 flex items-center justify-center">
+              <div className="relative w-full max-w-lg h-56 flex items-center justify-center overflow-hidden">
                 <div
                   style={{
                     width: `${Math.min(480, expectedReturn * 28 + 60)}px`,
@@ -358,16 +358,16 @@ function SeeContent() {
       {/* ========================================================= */}
       {activeConcept === "dca" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
+          <div className="p-4 sm:p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-lucid-border/50">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone">
                   MONTHLY ALLOCATION CADENCE
                 </span>
-                <div className="font-editorial text-5xl text-lucid-bone mt-1">${dcaMonthly} / mo</div>
+                <div className="font-editorial text-4xl sm:text-5xl text-lucid-bone mt-1">${dcaMonthly} / mo</div>
               </div>
 
-              <div className="flex flex-col gap-2 min-w-[280px]">
+              <div className="flex flex-col gap-2 w-full sm:w-auto sm:min-w-[280px]">
                 <div className="flex justify-between text-xs font-mono text-lucid-stone">
                   <span>DRAG MONTHLY AMOUNT</span>
                   <span className="text-lucid-oxide font-bold">${dcaMonthly}</span>
@@ -485,16 +485,16 @@ function SeeContent() {
       {/* ========================================================= */}
       {activeConcept === "inflation" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
+          <div className="p-4 sm:p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-lucid-border/50">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone">
                   NOMINAL CASH PRINCIPAL
                 </span>
-                <div className="font-editorial text-5xl text-lucid-bone mt-1">${inflPrincipal.toLocaleString()}</div>
+                <div className="font-editorial text-4xl sm:text-5xl text-lucid-bone mt-1">${inflPrincipal.toLocaleString()}</div>
               </div>
 
-              <div className="flex flex-col gap-4 min-w-[280px]">
+              <div className="flex flex-col gap-4 w-full sm:w-auto sm:min-w-[280px]">
                 <div>
                   <div className="flex justify-between text-xs font-mono text-lucid-stone">
                     <span>INFLATION RATE</span>
@@ -706,7 +706,7 @@ function SeeContent() {
       {/* ========================================================= */}
       {activeConcept === "jewels-metals" && (
         <div className="space-y-8 animate-in fade-in duration-300">
-          <div className="p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
+          <div className="p-4 sm:p-6 md:p-10 rounded-3xl bg-lucid-ash border border-lucid-border shadow-2xl relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-lucid-border/50">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-lucid-stone">
@@ -831,7 +831,7 @@ function SeeContent() {
                   </span>
                 </div>
 
-                <div className="flex gap-2 font-mono text-xs">
+                <div className="flex flex-wrap gap-2 font-mono text-xs">
                   {[1925, 1950, 1975, 2000, 2026].map((yr) => (
                     <button
                       key={yr}

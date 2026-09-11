@@ -70,13 +70,13 @@ export const AdvancedTrendCrucible: React.FC<AdvancedTrendCrucibleProps> = ({
           </div>
 
           {/* Large Price Readout with Dynamic Period Delta */}
-          <div className="flex items-baseline gap-4 mt-2">
-            <span className="font-mono text-4xl lg:text-5xl font-black text-white">
+          <div className="flex flex-wrap items-baseline gap-2 sm:gap-4 mt-2">
+            <span className="font-mono text-3xl sm:text-4xl lg:text-5xl font-black text-white">
               ${(currentPoint ? currentPoint.close : quote.price).toFixed(2)}
             </span>
 
             <div
-              className={`flex items-center gap-1 font-mono text-sm lg:text-base font-bold ${
+              className={`flex items-center gap-1 font-mono text-xs sm:text-sm lg:text-base font-bold ${
                 periodChange >= 0 ? "text-[#00F5A0]" : "text-[#FF3366]"
               }`}
             >
@@ -91,9 +91,9 @@ export const AdvancedTrendCrucible: React.FC<AdvancedTrendCrucibleProps> = ({
         </div>
 
         {/* Timeframe Period Selector & Indicator Toggles */}
-        <div className="flex flex-col items-start lg:items-end gap-3">
+        <div className="flex flex-col items-start lg:items-end gap-3 w-full lg:w-auto">
           {/* Period Pills */}
-          <div className="flex items-center gap-1 bg-[#050608] p-1 rounded-lg border border-[#1e2636]">
+          <div className="flex items-center gap-1 bg-[#050608] p-1 rounded-lg border border-[#1e2636] max-w-full overflow-x-auto pb-1 sm:pb-1 w-full sm:w-auto">
             {PERIODS.map((p) => {
               const isSelected = selectedPeriod === p.value;
               return (
@@ -148,11 +148,11 @@ export const AdvancedTrendCrucible: React.FC<AdvancedTrendCrucibleProps> = ({
 
         {/* Hover Crosshair Info Tooltip */}
         {currentPoint && (
-          <div className="absolute top-3 left-4 z-20 font-mono text-[11px] flex flex-wrap items-center gap-4 bg-[#090d14]/90 border border-[#212c3e] px-3 py-1.5 rounded shadow-lg pointer-events-none">
+          <div className="absolute top-2 left-2 right-2 sm:right-auto sm:top-3 sm:left-4 z-20 font-mono text-[10px] sm:text-[11px] flex flex-wrap items-center gap-2 sm:gap-4 bg-[#090d14]/95 border border-[#212c3e] px-2.5 py-1 rounded shadow-lg pointer-events-none">
             <span className="text-gray-400">Date: <strong className="text-white">{currentPoint.date}</strong></span>
             <span className="text-gray-400">Close: <strong className="text-white">${currentPoint.close.toFixed(2)}</strong></span>
-            <span className="text-gray-400">Open: <strong className="text-white">${currentPoint.open.toFixed(2)}</strong></span>
-            <span className="text-gray-400">Vol: <strong className="text-white">{currentPoint.volume.toLocaleString()}</strong></span>
+            <span className="text-gray-400 hidden sm:inline">Open: <strong className="text-white">${currentPoint.open.toFixed(2)}</strong></span>
+            <span className="text-gray-400 hidden md:inline">Vol: <strong className="text-white">{currentPoint.volume.toLocaleString()}</strong></span>
             {showSMA && currentPoint.sma20 && (
               <span className="text-[#f59e0b]">SMA20: ${currentPoint.sma20.toFixed(2)}</span>
             )}
@@ -268,7 +268,7 @@ export const AdvancedTrendCrucible: React.FC<AdvancedTrendCrucibleProps> = ({
       </div>
 
       {/* Metrics Row: Dimensions & Bullion Physical Value */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mt-6 pt-6 border-t border-[#1a2333] font-mono text-xs">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mt-6 pt-6 border-t border-[#1a2333] font-mono text-xs">
         <div className="p-3 bg-[#050608] rounded border border-[#1a2333]">
           <span className="text-[10px] text-gray-400 block uppercase">Period High</span>
           <span className="font-bold text-white">${maxPrice.toFixed(2)}</span>

@@ -39,7 +39,7 @@ export const RunningTickerTape: React.FC<RunningTickerTapeProps> = ({
       <button
         key={`${item.symbol}-${index}`}
         onClick={() => onSelectTicker?.(item.symbol)}
-        className={`inline-flex items-center gap-3 px-4 py-1.5 mx-2 rounded-sm border transition-all text-xs font-mono select-none cursor-pointer whitespace-nowrap ${
+        className={`inline-flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-1 sm:py-1.5 mx-1 sm:mx-2 rounded-sm border transition-all text-xs font-mono select-none cursor-pointer whitespace-nowrap ${
           isSelected
             ? "border-[#00F5A0] bg-[#00F5A0]/10 shadow-[0_0_15px_rgba(0,245,160,0.3)]"
             : isGold
@@ -56,7 +56,7 @@ export const RunningTickerTape: React.FC<RunningTickerTapeProps> = ({
           >
             {item.symbol}
           </span>
-          <span className="text-[10px] text-gray-400 font-sans">{item.name}</span>
+          <span className="text-[10px] text-gray-400 font-sans hidden xs:inline">{item.name}</span>
         </div>
 
         <span className="font-bold text-white">${item.price.toFixed(2)}</span>
@@ -74,10 +74,10 @@ export const RunningTickerTape: React.FC<RunningTickerTapeProps> = ({
   };
 
   return (
-    <div className="w-full bg-[#050608] border-y border-[#1c222d] py-2 overflow-hidden select-none relative group">
+    <div className="w-full bg-[#050608] border-y border-[#1c222d] py-1.5 sm:py-2 overflow-hidden select-none relative group">
       {/* Visual edge gradient fade */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#050608] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#050608] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#050608] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#050608] to-transparent z-10 pointer-events-none" />
 
       {/* Row 1: Fast Marquee */}
       <div className="flex overflow-hidden py-1">
