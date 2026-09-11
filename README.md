@@ -9,11 +9,6 @@ An open-source financial diagnostic observatory, macroeconomic intelligence plat
 | Resource | Environment | URL / Endpoint |
 | :--- | :--- | :--- |
 | Web Application | Production (Vercel) | [https://lucid-observatory.vercel.app](https://lucid-observatory.vercel.app) |
-| Backend API | Production (Render) | [https://lucid-backend.onrender.com](https://lucid-backend.onrender.com) |
-| OpenAPI Specification | Swagger UI | [https://lucid-backend.onrender.com/docs](https://lucid-backend.onrender.com/docs) |
-| ReDoc Specification | Interactive API Reference | [https://lucid-backend.onrender.com/redoc](https://lucid-backend.onrender.com/redoc) |
-| Service Health Check | Operational Status | [https://lucid-backend.onrender.com/health](https://lucid-backend.onrender.com/health) |
-
 ---
 
 ## Table of Contents
