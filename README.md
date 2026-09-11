@@ -125,29 +125,29 @@ flowchart TD
 
     subgraph Presentation ["Presentation Tier"]
         ClientApp["Next.js 15 Client\n(App Router + TypeScript)"]:::client
-        GuideModule["Interactive Walkaround Guide\n(Typewriter UI / Tour Context)"]:::client
+        GuideModule["Interactive Walkaround Guide<br/>(Typewriter UI / Tour Context)"]:::client
     end
 
     subgraph Gateway ["Gateway and Routing Tier"]
-        FastApiServer["FastAPI 0.115 Application\n(Uvicorn ASGI Gateway)"]:::gateway
-        CorsSecurity["CORS Security Filter\n(Flexible Origin Validator)"]:::gateway
+        FastApiServer["FastAPI 0.115 Application<br/>(Uvicorn ASGI Gateway)"]:::gateway
+        CorsSecurity["CORS Security Filter<br/>(Flexible Origin Validator)"]:::gateway
     end
 
     subgraph Engines ["Analytical Engine Tier"]
         MacroEngine["Macroeconomic Atmosphere Engine\n(Spread and Yield Analysis)"]:::core
-        MarketEngine["Market Floor Engine\n(Commodities and Equities)"]:::core
-        NlpEngine["Financial NLP Engine\n(TF-IDF Headline Classifier)"]:::core
+        MarketEngine["Market Floor Engine<br/>(Commodities and Equities)"]:::core
+        NlpEngine["Financial NLP Engine<br/>(TF-IDF Headline Classifier)"]:::core
         IntegrityEngine["Investment Integrity Engine\n(AAOIFI, DJIM, FTSE, MSCI)"]:::core
-        BehaviorEngine["Behavioral Decision Lab\n(Thesis Logging and Bias Scoring)"]:::core
+        BehaviorEngine["Behavioral Decision Lab<br/>(Thesis Logging and Bias Scoring)"]:::core
     end
 
     subgraph Storage ["Persistence Tier"]
-        DbLayer[("Relational Database\n(SQLAlchemy Async + SQLite / PostgreSQL)")]:::persistence
+        DbLayer[("Relational Database<br/>(SQLAlchemy Async + SQLite / PostgreSQL)")]:::persistence
     end
 
     subgraph Telemetry ["Upstream Telemetry Feeds"]
-        FredApi["Federal Reserve Economic Data\n(FRED API Keyed Feed)"]:::telemetry
-        MarketFeed["Yahoo Finance Market Streams\n(Spot Metals and Stock Tickers)"]:::telemetry
+        FredApi["Federal Reserve Economic Data<br/>(FRED API Keyed Feed)"]:::telemetry
+        MarketFeed["Yahoo Finance Market Streams<br/>(Spot Metals and Stock Tickers)"]:::telemetry
         SecFeed["SEC Edgar Repository\n(Corporate Subsidiary Structures)"]:::telemetry
     end
 
