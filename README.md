@@ -6,7 +6,7 @@ A calm, transparent financial web application built to help everyday people unde
 
 Add your live website links in this section after completing your free deployment:
 
-* Live Web Application: https://lucid-observatory.vercel.app (Paste your Vercel link here)
+* Live Web Application: https://lucid-observatory.vercel.app/ (Paste your Vercel link here)
 
 # What is Lucid?
 
