@@ -11,7 +11,7 @@ services:
       - key: PORT
         value: 10000
       - key: CORS_ORIGINS
-        value: "*"
+        value: "http://localhost:3000,https://*.vercel.app,*"
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_URL

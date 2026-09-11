@@ -1,6 +1,8 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from typing import List, Optional
+from pydantic import field_validator
+from typing import List, Optional, Union
 import os
+import json
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Lucid"
@@ -22,12 +24,29 @@ class Settings(BaseSettings):
     ALPACA_SECRET_KEY: Optional[str] = None
     
     # CORS
-    CORS_ORIGINS: List[str] = [
+    CORS_ORIGINS: Union[List[str], str] = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://*.vercel.app",
         "*"
     ]
+
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
+        if isinstance(v, str):
+            v_str = v.strip()
+            if v_str.startswith("[") and v_str.endswith("]"):
+                try:
+                    parsed = json.loads(v_str)
+                    if isinstance(parsed, list):
+                        return [str(item).strip() for item in parsed]
+                except Exception:
+                    pass
+            return [i.strip() for i in v_str.split(",") if i.strip()]
+        elif isinstance(v, list):
+            return [str(i).strip() for i in v]
+        return ["*"]
     
     # Data Storage Paths
     MODELS_DIR: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ml_artifacts")
