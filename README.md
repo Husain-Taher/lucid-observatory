@@ -1,177 +1,292 @@
-# Lucid Observatory and Investment Integrity Engine
+# Lucid Financial Observatory and Investment Integrity Platform
 
-A calm, transparent financial web application built to help everyday people understand the market, verify news claims, practice investing without losing real money, and trace where their investment dollars actually go.
+An open-source financial diagnostic observatory, macroeconomic intelligence platform, and investment integrity engine. Lucid provides verified market telemetry, algorithmic news deconstruction, multi-standard ethical capital screening, and behavioral simulation tools for research and financial education.
 
-# Live Demo Links
+---
 
-Add your live website links in this section after completing your free deployment:
+## Deployment and Live Service Endpoints
 
-* Live Web Application: https://lucid-observatory.vercel.app/ (Paste your Vercel link here)
+| Resource | Environment | URL / Endpoint |
+| :--- | :--- | :--- |
+| Web Application | Production (Vercel) | [https://lucid-observatory.vercel.app](https://lucid-observatory.vercel.app) |
+| Backend API | Production (Render) | [https://lucid-backend.onrender.com](https://lucid-backend.onrender.com) |
+| OpenAPI Specification | Swagger UI | [https://lucid-backend.onrender.com/docs](https://lucid-backend.onrender.com/docs) |
+| ReDoc Specification | Interactive API Reference | [https://lucid-backend.onrender.com/redoc](https://lucid-backend.onrender.com/redoc) |
+| Service Health Check | Operational Status | [https://lucid-backend.onrender.com/health](https://lucid-backend.onrender.com/health) |
 
-# What is Lucid?
+---
 
-Most investing apps today are designed like video games or digital casinos. They use flashing red and green lights, push notifications that cause panic, and complicated financial jargon that confuses normal people. At the same time, social media is full of fake financial advice and exaggerated headlines.
+## Table of Contents
 
-Lucid was built to fix this problem. It is an educational observatory where you can:
+1. [Executive Summary](#executive-summary)
+2. [Platform Architecture and Core Engines](#platform-architecture-and-core-engines)
+3. [Technical Specification Passport](#technical-specification-passport)
+4. [System Design and Data Flow Architecture](#system-design-and-data-flow-architecture)
+5. [REST API Service Directory](#rest-api-service-directory)
+6. [Local Development and Setup](#local-development-and-setup)
+7. [Automated Verification and Testing](#automated-verification-and-testing)
+8. [Regulatory Notices and Compliance Disclaimers](#regulatory-notices-and-compliance-disclaimers)
+9. [Licensing](#licensing)
 
-1. Understand the market mood before looking at any stock prices.
-2. Read real news where sensational headlines are separated from the actual facts.
-3. Test investment claims and practice trading with virtual money so you never risk your life savings.
-4. Screen companies for ethical standards and see exactly which subsidiaries and business lines your money touches.
-5. Discover your own psychological habits and emotional biases so you make calm decisions.
+---
 
-# Quick Glimpse of How the Project Works
+## Executive Summary
 
-Here is the simple step by step journey of a user inside Lucid:
+Lucid is designed as an analytical counterweight to speculative volatility and information asymmetry in modern capital markets. Rather than prioritizing trade frequency, Lucid decouples market analysis into structured diagnostic layers:
 
-Step 1: The Observatory Atmosphere
-When you open Lucid, you see the market atmosphere score from 0 to 100. This tells you if the overall economy is fearful, calm, or overheated using data from the Federal Reserve.
+* **Macroeconomic Atmosphere Diagnostics**: Synthesizes yield curve dynamics, Federal Reserve policy metrics, and liquidity spreads into a normalized market health index.
+* **Algorithmic News Deconstruction**: Parses financial headlines using natural language processing to isolate quantitative facts from speculative rhetoric.
+* **Investment Integrity Engine**: Evaluates parent-subsidiary corporate relationships against international ethical and Shariah financial criteria (AAOIFI, DJIM, FTSE, and MSCI).
+* **Capital Trail Visualization**: Maps the flow of investment capital across supply chains, operational subsidiaries, debt structures, and dividend purification requirements.
+* **Behavioral Execution Arena**: Provides simulated trade execution linked to mandatory pre-decision theses, enabling objective tracking of cognitive biases (e.g., loss aversion, disposition effect).
 
-Step 2: Concept Studios
-You can open visual studios that show you how money works in real life. For example, you can use interactive sliders to see how inflation eats away at cash savings compared to gold over 10, 20, or 30 years.
+---
 
-Step 3: The Market Floor and the News Broadsheet
-You can watch a live ticker tape with real prices for Gold, Silver, Platinum, major stock indices, and tech stocks. Below the charts, our smart news reader pulls real articles and scores them on factual substance versus clickbait hype. It clearly tells you what the news actually means in plain words.
+## Platform Architecture and Core Engines
 
-Step 4: The Investment Integrity Engine and the Capital Trail
-Type in any company like Apple, Microsoft, Nvidia, or Tesla. The system checks if the company follows ethical and Shariah financial rules (such as AAOIFI, DJIM, FTSE, and MSCI). It opens the Capital Trail, which shows you your investment dollar traveling from the parent company into its subsidiaries, its debt levels, and its dividend purification calculation.
+### 1. Macroeconomic Atmosphere Engine
+Aggregates live sovereign debt yields and liquidity benchmarks directly from the Federal Reserve Bank of St. Louis (FRED® API):
+* **Yield Curve Inversion Spread**: 10-Year Treasury Constant Maturity minus 2-Year Treasury Constant Maturity (T10Y2Y).
+* **Liquidity and Credit Stress**: BofA Merrill Lynch US High Yield Option-Adjusted Spread and Federal Funds Effective Rate.
+* **Normalized Sentiment Score**: Scaled from 0 (extreme systemic panic) to 100 (frothy exuberance), establishing macro context prior to individual asset inspection.
 
-Step 5: Practice Arena and Claim Deconstruction
-If you see someone on social media claiming a stock will double next week, you can paste the text into Lucid. Lucid breaks down the claim, scores the hype level, and lets you write down your reasoning before placing a simulated paper trade.
+### 2. Market Floor and Commodities Telemetry
+Monitors real-time multi-asset price action across spot commodities and global benchmark equities:
+* **Precious Metals**: Gold (XAU/USD via GC=F), Silver (XAG/USD via SI=F), and Platinum (PL=F).
+* **Indices and Equities**: S&P 500 ETF (SPY), Nasdaq 100 (QQQ), and foundational technology equities.
+* **Historical Windows**: Dynamic multi-timeframe charting spanning 7-day, 30-day, 90-day, 1-year, and 5-year horizons with moving average overlays.
 
-Step 6: Behavioral Mirror
-The application remembers your past simulated decisions and helps you spot emotional habits, such as buying out of FOMO or holding onto losing trades for too long.
+### 3. Financial NLP and BroadSheet Engine
+Analyzes media discourse using text processing and lexical analysis pipelines:
+* **Substance vs. Sensationalism Classification**: TF-IDF vectorization paired with multinomial classification to score clickbait probability.
+* **Headline Decomposition**: Extracts mentioned ticker entities, identifies primary catalysts, and generates concise editorial summaries in plain language.
+* **Claim Deconstruction Matrix**: Accepts arbitrary social media posts or news claims to score factual backing, source attribution, and promotional bias.
 
-# Tech Spec Passport
+### 4. Investment Integrity and Capital Trail Engine
+Performs structural compliance evaluation across international governance frameworks:
+* **Hierarchical Screening**: Inspects parent entities, operating subsidiaries, and business segments to calculate restricted revenue exposure (e.g., conventional interest, alcohol, gambling, weapons).
+* **Financial Ratio Auditing**:
+  * Debt-to-Market Capitalization (Threshold: < 33%)
+  * Cash and Interest-Bearing Securities to Market Capitalization (Threshold: < 33%)
+  * Accounts Receivable to Total Assets (Threshold: < 49% or < 33% depending on standard)
+* **Capital Trail Graph**: Visualizes parent-to-subsidiary cash routing, revealing indirect non-compliant revenue streams.
+* **Purification Calculator**: Quantifies the exact non-permissible dividend percentage required for charitable deduction.
 
-Here is the complete list of technologies used to build both the frontend and backend of this project:
+### 5. Behavioral Practice Companion
+A risk-free paper trading and decision evaluation lab:
+* **Pre-Trade Thesis Mandatory Gate**: Requires users to articulate a hypothesis, conviction level, and emotional state prior to order placement.
+* **Behavioral Mirror**: Analyzes transaction logs over time to detect psychological pitfalls, including overconfidence, panic selling, and confirmation bias.
 
-## Frontend Stack
+---
 
-* Framework: Next.js version 15 with App Router
-* UI Library: React version 19
-* Language: TypeScript
-* Styling: Tailwind CSS with custom editorial themes
-* Icons: Lucide React (clean professional icons, zero emojis)
-* Data Fetching and Caching: TanStack React Query version 5
-* Interactive Canvas: HTML5 Canvas for the welcome constellation animation
-* Responsive Layout: Works on desktop monitors, laptops, tablets, and phones
+## Technical Specification Passport
 
-## Backend Stack
+### Frontend Architecture
 
-* Web Framework: FastAPI (Python 3.12)
-* Application Server: Uvicorn ASGI server
-* Data Validation: Pydantic version 2
-* Database: SQLite with async support (aiosqlite and SQLAlchemy 2.0)
-* Machine Learning and Text Processing: Scikit-learn, NumPy, and Pandas
-* News Analysis: TF-IDF vector text processing and Naive Bayes classification
-* Live Market Data: Yahoo Finance (yfinance library) for real stock and commodity prices
-* Economic Data: Federal Reserve Bank of St. Louis FRED API for Treasury yields and economic indicators
-* Automated Tests: Pytest with 27 automated tests covering all modules
+| Parameter | Specification | Purpose |
+| :--- | :--- | :--- |
+| Framework | Next.js 15.2.0 (App Router) | Server-side rendering, route grouping, static generation |
+| Runtime / UI | React 19.0.0 | Concurrent rendering and reactive component tree |
+| Language | TypeScript 5.8 | End-to-end type safety and interface validation |
+| Styling Architecture | Tailwind CSS 3.4 | Responsive layouts and design system |
+| Iconography | Lucide React | Standardized technical iconography |
+| Data Caching | TanStack React Query 5.66 | Client-side caching, polling, and optimistic updates |
+| Visual Canvas | HTML5 2D Canvas API | Real-time particle and constellation graph rendering |
+| Target Devices | Responsive Web | Desktop, laptop, tablet, and mobile browsers |
 
-# System Design Architecture
+### Backend Architecture
 
-Below is a simple visual diagram showing how the frontend, backend, database, and real data sources connect together:
+| Parameter | Specification | Purpose |
+| :--- | :--- | :--- |
+| Web Framework | FastAPI 0.115 | High-performance asynchronous RESTful API |
+| ASGI Web Server | Uvicorn 0.34 | Asynchronous server gateway interface |
+| Runtime | Python 3.12 | Base execution environment |
+| Settings Management | Pydantic v2 Settings | Strict environment parsing with custom array validators |
+| Object Relational Mapping | SQLAlchemy 2.0 (Async) | Non-blocking database session management |
+| Primary Database | SQLite via aiosqlite | Lightweight, self-contained relational persistence |
+| Production Database | PostgreSQL / Supabase ready | Configurable via DATABASE_URL connection string |
+| Machine Learning | Scikit-learn, NumPy, Pandas | TF-IDF text feature extraction and sentiment scoring |
+| Automated Testing | Pytest with pytest-asyncio | 27 unit, integration, and endpoint test routines |
+
+### External Data Ingestion Pipelines
+
+| Provider | Data Protocol | Data Ingested |
+| :--- | :--- | :--- |
+| Federal Reserve (FRED®) | HTTPS REST API | Macroeconomic interest rate spreads, Treasury yields |
+| Yahoo Finance (yfinance) | Asynchronous Data Streams | Spot commodities, ETFs, historical candles, equities |
+| SEC EDGAR | Public Document Filings | Corporate parent-subsidiary structures and 10-K notes |
+
+---
+
+## System Design and Data Flow Architecture
 
 ```mermaid
 flowchart TD
-    classDef client fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b;
-    classDef server fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#14532d;
-    classDef database fill:#fefce8,stroke:#eab308,stroke-width:2px,color:#713f12;
-    classDef external fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#0f172a;
+    classDef client fill:#f8fafc,stroke:#3b82f6,stroke-width:2px,color:#1e293b;
+    classDef gateway fill:#f0fdf4,stroke:#10b981,stroke-width:2px,color:#064e3b;
+    classDef core fill:#eff6ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b;
+    classDef persistence fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#78350f;
+    classDef telemetry fill:#faf5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95;
 
-    User["User Web Browser\n(Desktop or Mobile)"]:::client
-    NextApp["Frontend Web Application\n(Next.js 15 on Vercel)"]:::client
+    subgraph Presentation ["Presentation Tier"]
+        ClientApp["Next.js 15 Client\n(App Router + TypeScript)"]:::client
+        GuideModule["Interactive Walkaround Guide\n(Typewriter UI / Tour Context)"]:::client
+    end
 
-    ApiGateway["Backend API Router\n(FastAPI on Render)"]:::server
+    subgraph Gateway ["Gateway and Routing Tier"]
+        FastApiServer["FastAPI 0.115 Application\n(Uvicorn ASGI Gateway)"]:::gateway
+        CorsSecurity["CORS Security Filter\n(Flexible Origin Validator)"]:::gateway
+    end
 
-    Engine1["Atmosphere and Macro Engine"]:::server
-    Engine2["Market Floor and Live Ticker Engine"]:::server
-    Engine3["News Classifier and Claim Deconstructor"]:::server
-    Engine4["Investment Integrity and Capital Trail Engine"]:::server
-    Engine5["Paper Trading and Behavioral Mirror Engine"]:::server
+    subgraph Engines ["Analytical Engine Tier"]
+        MacroEngine["Macroeconomic Atmosphere Engine\n(Spread and Yield Analysis)"]:::core
+        MarketEngine["Market Floor Engine\n(Commodities and Equities)"]:::core
+        NlpEngine["Financial NLP Engine\n(TF-IDF Headline Classifier)"]:::core
+        IntegrityEngine["Investment Integrity Engine\n(AAOIFI, DJIM, FTSE, MSCI)"]:::core
+        BehaviorEngine["Behavioral Decision Lab\n(Thesis Logging and Bias Scoring)"]:::core
+    end
 
-    DB[("Local SQLite Database\nUser Theses, Trades, and Journals")]:::database
+    subgraph Storage ["Persistence Tier"]
+        DbLayer[("Relational Database\n(SQLAlchemy Async + SQLite / PostgreSQL)")]:::persistence
+    end
 
-    FRED["Federal Reserve Bank of St. Louis\n(FRED API Economic Data)"]:::external
-    Yahoo["Yahoo Finance Data Feed\n(Live Gold, Silver, and Stock Prices)"]:::external
-    SEC["SEC Edgar Public Filings\n(Company 10-K and 10-Q Reports)"]:::external
+    subgraph Telemetry ["Upstream Telemetry Feeds"]
+        FredApi["Federal Reserve Economic Data\n(FRED API Keyed Feed)"]:::telemetry
+        MarketFeed["Yahoo Finance Market Streams\n(Spot Metals and Stock Tickers)"]:::telemetry
+        SecFeed["SEC Edgar Repository\n(Corporate Subsidiary Structures)"]:::telemetry
+    end
 
-    User --> NextApp
-    NextApp --> ApiGateway
+    ClientApp <--> FastApiServer
+    GuideModule -.-> ClientApp
+    FastApiServer --> CorsSecurity
 
-    ApiGateway --> Engine1
-    ApiGateway --> Engine2
-    ApiGateway --> Engine3
-    ApiGateway --> Engine4
-    ApiGateway --> Engine5
+    FastApiServer --> MacroEngine
+    FastApiServer --> MarketEngine
+    FastApiServer --> NlpEngine
+    FastApiServer --> IntegrityEngine
+    FastApiServer --> BehaviorEngine
 
-    Engine1 --> FRED
-    Engine2 --> Yahoo
-    Engine3 --> Yahoo
-    Engine4 --> SEC
-    Engine4 --> Yahoo
-    Engine5 --> DB
+    MacroEngine <--> FredApi
+    MarketEngine <--> MarketFeed
+    NlpEngine <--> MarketFeed
+    IntegrityEngine <--> SecFeed
+    IntegrityEngine <--> MarketFeed
+
+    BehaviorEngine <--> DbLayer
 ```
 
-# How to Run the Project Locally
+---
 
-If you want to run this project on your own computer:
+## REST API Service Directory
 
-## 1. Run the Backend
+The backend exposes a structured RESTful API versioned under `/api/v1`. Interactive documentation is generated at `/docs`.
 
-Open a terminal in the backend folder:
+| Method | Endpoint Route | Description |
+| :--- | :--- | :--- |
+| `GET` | `/health` | Service operational health and status check |
+| `POST` | `/api/v1/auth/register` | Register a new user profile with hashed credentials |
+| `POST` | `/api/v1/auth/token` | Obtain JWT access token for authenticated operations |
+| `GET` | `/api/v1/sentiment/atmosphere` | Returns 0-100 macroeconomic sentiment index |
+| `GET` | `/api/v1/commodities/gold` | Real-time spot Gold pricing and 24-hour delta |
+| `GET` | `/api/v1/commodities/all` | Live prices for Gold, Silver, Platinum, and Palladium |
+| `GET` | `/api/v1/market-floor/commodities` | Broad commodity basket data with daily metrics |
+| `GET` | `/api/v1/market-floor/stocks` | Watchlist stock performance and percentage changes |
+| `GET` | `/api/v1/market-floor/history` | Historical candlestick data for specified symbols |
+| `GET` | `/api/v1/news/broadsheet` | Parsed financial broadsheet with hype vs. fact scores |
+| `POST` | `/api/v1/claims/analyze` | Evaluates public claims for veracity and emotional bias |
+| `POST` | `/api/v1/integrity/screen` | Multi-standard ethical and financial compliance screening |
+| `GET` | `/api/v1/integrity/capital-trail/{symbol}` | Subsidiary hierarchy, debt breakdown, and purification |
+| `POST` | `/api/v1/portfolio/trade` | Executes simulated paper trade with thesis validation |
+| `GET` | `/api/v1/portfolio/summary` | Retrieves virtual portfolio holdings and cash balance |
+| `POST` | `/api/v1/decisions/log` | Records trade rationale and pre-decision emotional state |
+| `GET` | `/api/v1/insights/behavioral-mirror` | Returns cognitive bias evaluation across past trades |
+
+---
+
+## Local Development and Setup
+
+### Prerequisites
+* Python 3.12 or higher
+* Node.js 18.18 or higher (LTS recommended)
+* Git
+
+### 1. Backend Service Configuration
+
+Navigate to the `backend` directory and configure the Python virtual environment:
 
 ```bash
 cd backend
 python -m venv venv
 ```
 
-Activate the virtual environment:
-* On Windows: venv\Scripts\activate
-* On Mac or Linux: source venv/bin/activate
+Activate the environment:
+* Windows PowerShell: `.\venv\Scripts\Activate.ps1`
+* macOS / Linux: `source venv/bin/activate`
 
-Install the requirements and start the server:
+Install project dependencies:
 
 ```bash
 pip install -r requirements.txt
-python -m uvicorn app.main:app --port 8000 --reload
 ```
 
-The backend will start at http://127.0.0.1:8000. You can view the live interactive API documentation at http://127.0.0.1:8000/docs.
+Launch the Uvicorn development server:
 
-## 2. Run the Frontend
+```bash
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
 
-Open a second terminal in the frontend folder:
+The API service will initialize at `http://127.0.0.1:8000`. Swagger documentation is accessible at `http://127.0.0.1:8000/docs`.
+
+### 2. Frontend Application Configuration
+
+In a separate terminal, navigate to the `frontend` directory:
 
 ```bash
 cd frontend
 npm install
+```
+
+Start the Next.js development server:
+
+```bash
 npm run dev
 ```
 
-The frontend website will open at http://localhost:3000.
+The web application will open at `http://localhost:3000`.
 
-## 3. Run the Automated Tests
+---
 
-To verify that all 27 automated tests pass:
+## Automated Verification and Testing
+
+The backend includes a comprehensive automated test suite testing all endpoints, data engines, NLP classifiers, and database interactions.
+
+Run the test suite with Pytest:
 
 ```bash
 cd backend
-python -m pytest
+python -m pytest -v
 ```
 
-# Mandatory Legal Notices and Attribution
+### Test Suite Execution Summary
+* **Total Tests**: 27 unit and integration tests
+* **Execution Status**: 27 passing (100% pass rate)
+* **Coverage Scope**: Auth routes, atmosphere generator, commodity streams, NLP claim deconstruction, integrity screening, and portfolio ledger.
 
-## Federal Reserve Bank of St. Louis Notice
-This product uses the FRED API but is not endorsed or certified by the Federal Reserve Bank of St. Louis.
+---
 
-## Export and Compliance Notice
-This software complies with all United States export laws and Office of Foreign Assets Control (OFAC) regulations. By using this software, you confirm you are not located in any embargoed destination.
+## Regulatory Notices and Compliance Disclaimers
 
-## Educational Disclaimer
-Lucid is created solely for educational, research, and self-reflection purposes. It does not provide personalized investment advice, tax advice, or legal advice. Simulated paper trading does not involve real money.
+### Federal Reserve Bank of St. Louis Notice
+This product utilizes the Federal Reserve Bank of St. Louis (FRED®) API but is not endorsed, certified, or sponsored by the Federal Reserve Bank of St. Louis. FRED® is a registered trademark of the Federal Reserve Bank of St. Louis.
 
-# License
+### Export Administration and OFAC Compliance
+This software complies with United States export administration laws and the economic sanctions administered by the U.S. Department of the Treasury's Office of Foreign Assets Control (OFAC). Access to this platform is restricted in jurisdictions subject to comprehensive U.S. sanctions.
 
-This project is licensed under the open source MIT License. You are free to use, modify, and distribute this software for educational and personal projects.
+### Educational Research Disclaimer
+The Lucid platform, including all analytical models, market atmosphere indices, claim deconstructions, and integrity calculations, is created exclusively for educational, scholarly, and non-commercial research purposes. Nothing within this software constitutes personalized investment, legal, accounting, or tax advice. Simulated paper trading utilizes virtual credits and carries no capital risk.
+
+---
+
+## Licensing
+
+This project is licensed under the open-source **MIT License**. You are free to inspect, adapt, and build upon this software for educational, academic, and non-commercial applications. See the `LICENSE` file in the project repository for full legal text.
